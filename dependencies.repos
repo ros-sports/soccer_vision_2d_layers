@@ -1,0 +1,5 @@
+repositories:
+  soccer_interfaces:
+    type: git
+    url: https://github.com/ros-sports/soccer_interfaces.git
+    version: rolling

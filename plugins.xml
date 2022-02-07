@@ -1,0 +1,8 @@
+<library path="soccer_vision_msgs_layers">
+  <class type="soccer_vision_msgs_layers::BallArrayLayer" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::BallArray</description>
+  </class>
+  <!-- <class type="soccer_vision_msgs_layers::RobotArrayLayer" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::RobotArray</description>
+  </class> -->
+</library>
