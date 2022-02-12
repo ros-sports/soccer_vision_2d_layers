@@ -18,6 +18,7 @@
 #include "soccer_vision_msgs_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
 #include "soccer_vision_msgs/msg/ball_array.hpp"
+#include "soccer_vision_msgs_layers/ball_layer.hpp"
 
 namespace soccer_vision_msgs_layers
 {
@@ -28,6 +29,8 @@ protected:
   void overlay(
     QImage & layer,
     const soccer_vision_msgs::msg::BallArray & msg) override;
+private:
+  BallLayer ballLayer;
 };
 
 }  // namespace soccer_vision_msgs_layers

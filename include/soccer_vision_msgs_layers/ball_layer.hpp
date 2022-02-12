@@ -12,26 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <QPainter>
-#include "soccer_vision_msgs_layers/ball_array_layer.hpp"
+#ifndef SOCCER_VISION_MSGS_LAYERS__BALL_LAYER_HPP_
+#define SOCCER_VISION_MSGS_LAYERS__BALL_LAYER_HPP_
+
+#include "soccer_vision_msgs_layers/visibility_control.h"
+#include "rqt_image_overlay_layer/plugin.hpp"
+#include "soccer_vision_msgs/msg/ball.hpp"
 
 namespace soccer_vision_msgs_layers
 {
 
-void BallArrayLayer::overlay(
-  QImage & layer,
-  const soccer_vision_msgs::msg::BallArray & msg)
+class BallLayer : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::Ball>
 {
-  for (auto & ball : msg.balls)
-  {
-    ballLayer.overlay(layer, ball);
-  }
-}
+public:
+  void overlay(
+    QImage & layer,
+    const soccer_vision_msgs::msg::Ball & msg) override;
+};
 
 }  // namespace soccer_vision_msgs_layers
 
-#include "pluginlib/class_list_macros.hpp"
-
-PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::BallArrayLayer,
-  rqt_image_overlay_layer::PluginInterface)
+#endif  // SOCCER_VISION_MSGS_LAYERS__BALL_LAYER_HPP_

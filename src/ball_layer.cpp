@@ -13,19 +13,31 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/ball_array_layer.hpp"
+#include "soccer_vision_msgs_layers/ball_layer.hpp"
 
 namespace soccer_vision_msgs_layers
 {
 
-void BallArrayLayer::overlay(
+void BallLayer::overlay(
   QImage & layer,
-  const soccer_vision_msgs::msg::BallArray & msg)
+  const soccer_vision_msgs::msg::Ball & msg)
 {
-  for (auto & ball : msg.balls)
-  {
-    ballLayer.overlay(layer, ball);
-  }
+  QPainter painter(&layer);
+  painter.translate(msg.center.x, msg.center.y);
+
+  painter.save();
+  QPen pen(Qt::black);
+  pen.setCapStyle(Qt::RoundCap);
+  pen.setWidth(20);
+  painter.setPen(pen);
+  painter.drawPoint(0, 0);
+  painter.restore();
+
+  painter.save();
+  painter.translate(-30, -20);
+  QString str = "(%1, %2)";
+  painter.drawText(0, 0, str.arg(msg.center.x).arg(msg.center.y));
+  painter.restore();
 }
 
 }  // namespace soccer_vision_msgs_layers
@@ -33,5 +45,5 @@ void BallArrayLayer::overlay(
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::BallArrayLayer,
+  soccer_vision_msgs_layers::BallLayer,
   rqt_image_overlay_layer::PluginInterface)
