@@ -13,24 +13,31 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/ball_array_layer.hpp"
+#include "confidence.hpp"
 
 namespace soccer_vision_msgs_layers
 {
-
-void BallArrayLayer::overlay(
-  QImage & layer,
-  const soccer_vision_msgs::msg::BallArray & msg)
+namespace confidence
 {
-  for (auto & ball : msg.balls) {
-    ballLayer.overlay(layer, ball);
-  }
+
+void overlay(
+  QPainter & painter,
+  float confidence)
+{
+  painter.save();
+
+  QPen pen{Qt::black};
+  painter.setPen(pen);
+
+  QString str = QString{"%1%"}.arg(confidence * 100);  // Convert to %
+  QFontMetrics fm(painter.font());
+  int pixelsWide = fm.horizontalAdvance(str);
+
+  painter.fillRect(0, -fm.height(), pixelsWide, fm.height(), Qt::red);
+  painter.drawText(0, -fm.descent(), str);
+
+  painter.restore();
 }
 
+}  // namespace confidence
 }  // namespace soccer_vision_msgs_layers
-
-#include "pluginlib/class_list_macros.hpp"
-
-PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::BallArrayLayer,
-  rqt_image_overlay_layer::PluginInterface)

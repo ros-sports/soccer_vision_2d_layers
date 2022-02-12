@@ -13,15 +13,16 @@ find_package(soccer_vision_msgs REQUIRED)
 
 add_library(soccer_vision_msgs_layers
   src/ball_array_layer.cpp
-  src/ball_layer.cpp)
+  src/ball_layer.cpp
+  src/confidence.cpp)
 target_compile_features(soccer_vision_msgs_layers PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 target_include_directories(soccer_vision_msgs_layers PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 ament_target_dependencies(
   soccer_vision_msgs_layers
-  "rqt_image_overlay_layer"
-  "soccer_vision_msgs"
+  rqt_image_overlay_layer
+  soccer_vision_msgs
 )
 
 pluginlib_export_plugin_description_file(rqt_image_overlay_layer plugins.xml)

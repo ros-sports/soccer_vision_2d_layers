@@ -12,25 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <QPainter>
-#include "soccer_vision_msgs_layers/ball_array_layer.hpp"
+#ifndef CONFIDENCE_HPP_
+#define CONFIDENCE_HPP_
+
+#include "soccer_vision_msgs_layers/visibility_control.h"
 
 namespace soccer_vision_msgs_layers
 {
-
-void BallArrayLayer::overlay(
-  QImage & layer,
-  const soccer_vision_msgs::msg::BallArray & msg)
+namespace confidence
 {
-  for (auto & ball : msg.balls) {
-    ballLayer.overlay(layer, ball);
-  }
-}
 
+void overlay(
+  QPainter & painter,
+  float confidence);
+
+}  // namespace confidence
 }  // namespace soccer_vision_msgs_layers
 
-#include "pluginlib/class_list_macros.hpp"
-
-PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::BallArrayLayer,
-  rqt_image_overlay_layer::PluginInterface)
+#endif  // CONFIDENCE_HPP_

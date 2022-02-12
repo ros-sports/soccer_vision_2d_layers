@@ -29,6 +29,7 @@ protected:
   void overlay(
     QImage & layer,
     const soccer_vision_msgs::msg::BallArray & msg) override;
+
 private:
   BallLayer ballLayer;
 };

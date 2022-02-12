@@ -14,6 +14,7 @@
 
 #include <QPainter>
 #include "soccer_vision_msgs_layers/ball_layer.hpp"
+#include "confidence.hpp"
 
 namespace soccer_vision_msgs_layers
 {
@@ -25,19 +26,20 @@ void BallLayer::overlay(
   QPainter painter(&layer);
   painter.translate(msg.center.x, msg.center.y);
 
+  // Draw Bounding Box and Center Point
   painter.save();
-  QPen pen(Qt::black);
-  pen.setCapStyle(Qt::RoundCap);
-  pen.setWidth(20);
+  QPen pen(Qt::red);
+  pen.setWidth(2);
   painter.setPen(pen);
+  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
   painter.drawPoint(0, 0);
   painter.restore();
 
-  painter.save();
-  painter.translate(-30, -20);
-  QString str = "(%1, %2)";
-  painter.drawText(0, 0, str.arg(msg.center.x).arg(msg.center.y));
-  painter.restore();
+  // Annotate Confidence if known
+  painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
+  if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
+    confidence::overlay(painter, msg.confidence);
+  }
 }
 
 }  // namespace soccer_vision_msgs_layers
