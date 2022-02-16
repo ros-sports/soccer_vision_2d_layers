@@ -17,6 +17,8 @@ add_library(soccer_vision_msgs_layers
   src/field_boundary.cpp
   src/goalpost.cpp
   src/goalpost_array.cpp
+  src/marking_ellipse.cpp
+  src/marking_ellipse_array.cpp
   src/marking_intersection.cpp
   src/marking_intersection_array.cpp
   src/marking_segment.cpp
