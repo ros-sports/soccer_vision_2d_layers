@@ -5,6 +5,9 @@
   <class type="soccer_vision_msgs_layers::BallArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
     <description>This is an rqt_image_overlay layer for soccer_vision_msgs::BallArray</description>
   </class>
+  <class type="soccer_vision_msgs_layers::FieldBoundary" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::FieldBoundary</description>
+  </class>
   <class type="soccer_vision_msgs_layers::Goalpost" base_class_type="rqt_image_overlay_layer::PluginInterface">
     <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Goalpost</description>
   </class>

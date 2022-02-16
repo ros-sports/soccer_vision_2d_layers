@@ -14,6 +14,7 @@ add_library(soccer_vision_msgs_layers
   src/ball.cpp
   src/ball_array.cpp
   src/confidence.cpp
+  src/field_boundary.cpp
   src/goalpost.cpp
   src/goalpost_array.cpp
   src/marking_intersection.cpp
