@@ -12,32 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <QPainter>
-#include "confidence.hpp"
+#ifndef SOCCER_VISION_MSGS_LAYERS__GOALPOST_HPP_
+#define SOCCER_VISION_MSGS_LAYERS__GOALPOST_HPP_
+
+#include "soccer_vision_msgs_layers/visibility_control.h"
+#include "rqt_image_overlay_layer/plugin.hpp"
+#include "soccer_vision_msgs/msg/goalpost.hpp"
 
 namespace soccer_vision_msgs_layers
 {
-namespace confidence
+
+class Goalpost : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::Goalpost>
 {
+public:
+  void overlay(
+    QImage & layer,
+    const soccer_vision_msgs::msg::Goalpost & msg) override;
+};
 
-void overlay(
-  QPainter & painter,
-  float confidence)
-{
-  painter.save();
-
-  QString str = QString{"%1%"}.arg(confidence * 100);  // Convert to %
-  QFontMetrics fm(painter.font());
-  int pixelsWide = fm.horizontalAdvance(str);
-
-  painter.fillRect(0, -fm.height(), pixelsWide, fm.height(), painter.pen().color());
-
-  QPen pen{Qt::black};
-  painter.setPen(pen);
-  painter.drawText(0, -fm.descent(), str);
-
-  painter.restore();
-}
-
-}  // namespace confidence
 }  // namespace soccer_vision_msgs_layers
+
+#endif  // SOCCER_VISION_MSGS_LAYERS__GOALPOST_HPP_

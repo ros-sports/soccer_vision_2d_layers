@@ -13,31 +13,38 @@
 // limitations under the License.
 
 #include <QPainter>
+#include "soccer_vision_msgs_layers/goalpost.hpp"
 #include "confidence.hpp"
 
 namespace soccer_vision_msgs_layers
 {
-namespace confidence
+
+void Goalpost::overlay(
+  QImage & layer,
+  const soccer_vision_msgs::msg::Goalpost & msg)
 {
+  QPainter painter(&layer);
 
-void overlay(
-  QPainter & painter,
-  float confidence)
-{
-  painter.save();
-
-  QString str = QString{"%1%"}.arg(confidence * 100);  // Convert to %
-  QFontMetrics fm(painter.font());
-  int pixelsWide = fm.horizontalAdvance(str);
-
-  painter.fillRect(0, -fm.height(), pixelsWide, fm.height(), painter.pen().color());
-
-  QPen pen{Qt::black};
+  QPen pen(Qt::yellow);
+  pen.setWidth(2);
   painter.setPen(pen);
-  painter.drawText(0, -fm.descent(), str);
 
+  // Draw Bounding Box and Center Point
+  painter.save();
+  painter.translate(msg.bb.center.x, msg.bb.center.y);
+  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
+  // Annotate Confidence if known
+  painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
+  if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
+    confidence::overlay(painter, msg.confidence);
+  }
   painter.restore();
 }
 
-}  // namespace confidence
 }  // namespace soccer_vision_msgs_layers
+
+#include "pluginlib/class_list_macros.hpp"
+
+PLUGINLIB_EXPORT_CLASS(
+  soccer_vision_msgs_layers::Goalpost,
+  rqt_image_overlay_layer::PluginInterface)
