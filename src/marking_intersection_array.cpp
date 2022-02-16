@@ -13,35 +13,18 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/ball.hpp"
-#include "confidence.hpp"
+#include "soccer_vision_msgs_layers/marking_intersection_array.hpp"
 
 namespace soccer_vision_msgs_layers
 {
 
-void Ball::overlay(
+void MarkingIntersectionArray::overlay(
   QImage & layer,
-  const soccer_vision_msgs::msg::Ball & msg)
+  const soccer_vision_msgs::msg::MarkingArray & msg)
 {
-  QPainter painter(&layer);
-
-  QPen pen(Qt::red);
-  pen.setWidth(2);
-  painter.setPen(pen);
-
-  // Draw Bounding Box and Confidence
-  painter.save();
-  painter.translate(msg.bb.center.x, msg.bb.center.y);
-  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
-  // Annotate Confidence if known
-  painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
-  if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
-    confidence::overlay(painter, msg.confidence);
+  for (auto & intersection : msg.intersections) {
+    markingIntersectionLayer.overlay(layer, intersection);
   }
-  painter.restore();
-
-  // Draw center
-  painter.drawPoint(msg.center.x, msg.center.y);
 }
 
 }  // namespace soccer_vision_msgs_layers
@@ -49,5 +32,5 @@ void Ball::overlay(
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::Ball,
+  soccer_vision_msgs_layers::MarkingIntersectionArray,
   rqt_image_overlay_layer::PluginInterface)

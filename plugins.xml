@@ -11,6 +11,12 @@
   <class type="soccer_vision_msgs_layers::GoalpostArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
     <description>This is an rqt_image_overlay layer for soccer_vision_msgs::GoalpostArray</description>
   </class>
+  <class type="soccer_vision_msgs_layers::MarkingIntersection" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::MarkingIntersection</description>
+  </class>
+  <class type="soccer_vision_msgs_layers::MarkingIntersectionArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for intersections in soccer_vision_msgs::MarkingArray</description>
+  </class>
   <class type="soccer_vision_msgs_layers::Robot" base_class_type="rqt_image_overlay_layer::PluginInterface">
     <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Robot</description>
   </class>

@@ -25,7 +25,7 @@ void Goalpost::overlay(
 {
   QPainter painter(&layer);
 
-  QPen pen(Qt::yellow);
+  QPen pen(Qt::cyan);
   pen.setWidth(2);
   painter.setPen(pen);
 
