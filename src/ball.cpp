@@ -24,22 +24,25 @@ void Ball::overlay(
   const soccer_vision_msgs::msg::Ball & msg)
 {
   QPainter painter(&layer);
-  painter.translate(msg.center.x, msg.center.y);
 
-  // Draw Bounding Box and Center Point
-  painter.save();
   QPen pen(Qt::red);
   pen.setWidth(2);
   painter.setPen(pen);
-  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
-  painter.drawPoint(0, 0);
-  painter.restore();
 
+  // Draw Bounding Box and Center Point
+  painter.save();
+  painter.translate(msg.bb.center.x, msg.bb.center.y);
+  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
   // Annotate Confidence if known
   painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
   if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
     confidence::overlay(painter, msg.confidence);
   }
+  painter.restore();
+
+  // Draw center
+  painter.setPen(pen);
+  painter.drawPoint(msg.center.x, msg.center.y);
 }
 
 }  // namespace soccer_vision_msgs_layers
