@@ -21,6 +21,8 @@ add_library(soccer_vision_msgs_layers
   src/marking_intersection_array.cpp
   src/marking_segment.cpp
   src/marking_segment_array.cpp
+  src/obstacle.cpp
+  src/obstacle_array.cpp
   src/robot.cpp
   src/robot_array.cpp)
 target_compile_features(soccer_vision_msgs_layers PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17

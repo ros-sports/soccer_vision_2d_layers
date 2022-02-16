@@ -26,6 +26,12 @@
   <class type="soccer_vision_msgs_layers::MarkingSegmentArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
     <description>This is an rqt_image_overlay layer for segments in soccer_vision_msgs::MarkingArray</description>
   </class>
+  <class type="soccer_vision_msgs_layers::Obstacle" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Obstacle</description>
+  </class>
+  <class type="soccer_vision_msgs_layers::ObstacleArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::ObstacleArray</description>
+  </class>
   <class type="soccer_vision_msgs_layers::Robot" base_class_type="rqt_image_overlay_layer::PluginInterface">
     <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Robot</description>
   </class>
