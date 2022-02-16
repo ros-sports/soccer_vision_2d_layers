@@ -29,7 +29,7 @@ void Goalpost::overlay(
   pen.setWidth(2);
   painter.setPen(pen);
 
-  // Draw Bounding Box and Center Point
+  // Draw Bounding Box and Confidence
   painter.save();
   painter.translate(msg.bb.center.x, msg.bb.center.y);
   painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
