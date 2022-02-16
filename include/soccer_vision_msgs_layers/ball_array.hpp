@@ -12,18 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_LAYER_HPP_
-#define SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_LAYER_HPP_
+#ifndef SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_HPP_
+#define SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_HPP_
 
 #include "soccer_vision_msgs_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
 #include "soccer_vision_msgs/msg/ball_array.hpp"
-#include "soccer_vision_msgs_layers/ball_layer.hpp"
+#include "soccer_vision_msgs_layers/ball.hpp"
 
 namespace soccer_vision_msgs_layers
 {
 
-class BallArrayLayer : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::BallArray>
+class BallArray : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::BallArray>
 {
 protected:
   void overlay(
@@ -31,9 +31,9 @@ protected:
     const soccer_vision_msgs::msg::BallArray & msg) override;
 
 private:
-  BallLayer ballLayer;
+  Ball ballLayer;
 };
 
 }  // namespace soccer_vision_msgs_layers
 
-#endif  // SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_LAYER_HPP_
+#endif  // SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_HPP_

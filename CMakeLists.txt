@@ -11,8 +11,8 @@ find_package(rqt_image_overlay_layer REQUIRED)
 find_package(soccer_vision_msgs REQUIRED)
 
 add_library(soccer_vision_msgs_layers
-  src/ball_array_layer.cpp
-  src/ball_layer.cpp
+  src/ball_array.cpp
+  src/ball.cpp
   src/confidence.cpp)
 target_compile_features(soccer_vision_msgs_layers PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 target_include_directories(soccer_vision_msgs_layers PUBLIC

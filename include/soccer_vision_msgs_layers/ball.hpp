@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef SOCCER_VISION_MSGS_LAYERS__BALL_LAYER_HPP_
-#define SOCCER_VISION_MSGS_LAYERS__BALL_LAYER_HPP_
+#ifndef SOCCER_VISION_MSGS_LAYERS__BALL_HPP_
+#define SOCCER_VISION_MSGS_LAYERS__BALL_HPP_
 
 #include "soccer_vision_msgs_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
@@ -22,7 +22,7 @@
 namespace soccer_vision_msgs_layers
 {
 
-class BallLayer : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::Ball>
+class Ball : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::Ball>
 {
 public:
   void overlay(
@@ -32,4 +32,4 @@ public:
 
 }  // namespace soccer_vision_msgs_layers
 
-#endif  // SOCCER_VISION_MSGS_LAYERS__BALL_LAYER_HPP_
+#endif  // SOCCER_VISION_MSGS_LAYERS__BALL_HPP_

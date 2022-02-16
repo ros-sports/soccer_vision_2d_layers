@@ -13,32 +13,17 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/ball_layer.hpp"
-#include "confidence.hpp"
+#include "soccer_vision_msgs_layers/ball_array.hpp"
 
 namespace soccer_vision_msgs_layers
 {
 
-void BallLayer::overlay(
+void BallArray::overlay(
   QImage & layer,
-  const soccer_vision_msgs::msg::Ball & msg)
+  const soccer_vision_msgs::msg::BallArray & msg)
 {
-  QPainter painter(&layer);
-  painter.translate(msg.center.x, msg.center.y);
-
-  // Draw Bounding Box and Center Point
-  painter.save();
-  QPen pen(Qt::red);
-  pen.setWidth(2);
-  painter.setPen(pen);
-  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
-  painter.drawPoint(0, 0);
-  painter.restore();
-
-  // Annotate Confidence if known
-  painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
-  if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
-    confidence::overlay(painter, msg.confidence);
+  for (auto & ball : msg.balls) {
+    ballLayer.overlay(layer, ball);
   }
 }
 
@@ -47,5 +32,5 @@ void BallLayer::overlay(
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::BallLayer,
+  soccer_vision_msgs_layers::BallArray,
   rqt_image_overlay_layer::PluginInterface)
