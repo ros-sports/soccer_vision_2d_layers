@@ -23,12 +23,10 @@ namespace soccer_vision_msgs_layers
 {
 
 void MarkingIntersection::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::MarkingIntersection & msg)
 {
-  QPainter painter(&layer);
-
-  QPen pen(QColor(255, 255, 0, 100));
+  QPen pen = painter.pen();
   pen.setWidth(8);
   pen.setCapStyle(Qt::RoundCap);
   painter.setPen(pen);

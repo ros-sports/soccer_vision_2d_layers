@@ -26,7 +26,7 @@ class FieldBoundary : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs:
 {
 public:
   void overlay(
-    QImage & layer,
+    QPainter & painter,
     const soccer_vision_msgs::msg::FieldBoundary & msg) override;
 };
 

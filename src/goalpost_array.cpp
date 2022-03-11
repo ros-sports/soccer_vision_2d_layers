@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void GoalpostArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::GoalpostArray & msg)
 {
   for (auto & goalpost : msg.posts) {
-    goalpostLayer.overlay(layer, goalpost);
+    goalpostLayer.overlay(painter, goalpost);
   }
 }
 

@@ -27,7 +27,7 @@ class RobotArray : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::ms
 {
 protected:
   void overlay(
-    QImage & layer,
+    QPainter & painter,
     const soccer_vision_msgs::msg::RobotArray & msg) override;
 
 private:
