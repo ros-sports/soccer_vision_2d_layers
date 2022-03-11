@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void MarkingSegmentArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::MarkingArray & msg)
 {
   for (auto & segment : msg.segments) {
-    markingSegmentLayer.overlay(layer, segment);
+    markingSegmentLayer.overlay(painter, segment);
   }
 }
 

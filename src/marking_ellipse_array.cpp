@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void MarkingEllipseArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::MarkingArray & msg)
 {
   for (auto & ellipse : msg.ellipses) {
-    markingEllipseLayer.overlay(layer, ellipse);
+    markingEllipseLayer.overlay(painter, ellipse);
   }
 }
 

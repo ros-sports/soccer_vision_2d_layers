@@ -27,7 +27,7 @@ class GoalpostArray : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs:
 {
 protected:
   void overlay(
-    QImage & layer,
+    QPainter & painter,
     const soccer_vision_msgs::msg::GoalpostArray & msg) override;
 
 private:

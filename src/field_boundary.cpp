@@ -20,12 +20,10 @@ namespace soccer_vision_msgs_layers
 {
 
 void FieldBoundary::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::FieldBoundary & msg)
 {
-  QPainter painter(&layer);
-
-  QPen pen(QColor(0, 0, 0, 100));
+  QPen pen = painter.pen();
   pen.setWidth(2);
   pen.setCapStyle(Qt::RoundCap);
   painter.setPen(pen);

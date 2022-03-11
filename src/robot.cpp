@@ -20,12 +20,10 @@ namespace soccer_vision_msgs_layers
 {
 
 void Robot::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::Robot & msg)
 {
-  QPainter painter(&layer);
-
-  QPen pen(Qt::magenta);
+  QPen pen = painter.pen();
   pen.setWidth(2);
   painter.setPen(pen);
 
