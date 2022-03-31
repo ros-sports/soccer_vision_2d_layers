@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void MarkingIntersectionArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::MarkingArray & msg)
 {
   for (auto & intersection : msg.intersections) {
-    markingIntersectionLayer.overlay(layer, intersection);
+    markingIntersectionLayer.overlay(painter, intersection);
   }
 }
 

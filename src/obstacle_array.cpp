@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void ObstacleArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::ObstacleArray & msg)
 {
   for (auto & obstacle : msg.obstacles) {
-    obstacleLayer.overlay(layer, obstacle);
+    obstacleLayer.overlay(painter, obstacle);
   }
 }
 

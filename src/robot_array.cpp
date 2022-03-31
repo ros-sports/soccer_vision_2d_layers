@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void RobotArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::RobotArray & msg)
 {
   for (auto & robot : msg.robots) {
-    robotLayer.overlay(layer, robot);
+    robotLayer.overlay(painter, robot);
   }
 }
 

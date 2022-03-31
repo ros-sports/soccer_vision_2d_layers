@@ -27,7 +27,7 @@ class MarkingEllipse
 {
 public:
   void overlay(
-    QImage & layer,
+    QPainter & painter,
     const soccer_vision_msgs::msg::MarkingEllipse & msg) override;
 };
 

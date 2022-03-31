@@ -19,11 +19,11 @@ namespace soccer_vision_msgs_layers
 {
 
 void BallArray::overlay(
-  QImage & layer,
+  QPainter & painter,
   const soccer_vision_msgs::msg::BallArray & msg)
 {
   for (auto & ball : msg.balls) {
-    ballLayer.overlay(layer, ball);
+    ballLayer.overlay(painter, ball);
   }
 }
 

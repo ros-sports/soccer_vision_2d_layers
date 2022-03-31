@@ -32,8 +32,15 @@ void overlay(
 
   painter.fillRect(0, -fm.height(), pixelsWide, fm.height(), painter.pen().color());
 
-  QPen pen{Qt::black};
+  // Invert pen color
+  QPen pen = painter.pen();
+  QColor color = pen.color();
+  color.setRed(255 - color.red());
+  color.setGreen(255 - color.green());
+  color.setBlue(255 - color.blue());
+  pen.setColor(color);
   painter.setPen(pen);
+
   painter.drawText(0, -fm.descent(), str);
 
   painter.restore();

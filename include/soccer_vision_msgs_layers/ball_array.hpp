@@ -27,7 +27,7 @@ class BallArray : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg
 {
 protected:
   void overlay(
-    QImage & layer,
+    QPainter & painter,
     const soccer_vision_msgs::msg::BallArray & msg) override;
 
 private:

@@ -28,7 +28,7 @@ class MarkingSegmentArray
 {
 protected:
   void overlay(
-    QImage & layer,
+    QPainter & painter,
     const soccer_vision_msgs::msg::MarkingArray & msg) override;
 
 private:
