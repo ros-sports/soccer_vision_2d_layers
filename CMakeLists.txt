@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake_ros REQUIRED)
 find_package(rqt_image_overlay_layer REQUIRED)
 find_package(soccer_vision_msgs REQUIRED)
+find_package(vision_msgs_layers REQUIRED)
 
 add_library(soccer_vision_msgs_layers
   src/ball.cpp
@@ -35,6 +36,7 @@ ament_target_dependencies(
   soccer_vision_msgs_layers
   rqt_image_overlay_layer
   soccer_vision_msgs
+  vision_msgs_layers
 )
 
 pluginlib_export_plugin_description_file(rqt_image_overlay_layer plugins.xml)
