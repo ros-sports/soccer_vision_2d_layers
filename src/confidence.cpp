@@ -39,6 +39,7 @@ void overlay(
   color.setGreen(255 - color.green());
   color.setBlue(255 - color.blue());
   pen.setColor(color);
+  pen.setWidth(2);
   painter.setPen(pen);
 
   painter.drawText(0, -fm.descent(), str);

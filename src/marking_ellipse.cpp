@@ -24,21 +24,17 @@ void MarkingEllipse::overlay(
   QPainter & painter,
   const soccer_vision_msgs::msg::MarkingEllipse & msg)
 {
-  QPen pen = painter.pen();
-  pen.setWidth(3);
-  pen.setCapStyle(Qt::RoundCap);
-  painter.setPen(pen);
+  boundingBox2DLayer.overlay(painter, msg.bb);
 
-  // Draw Bounding Box and Confidence
-  painter.save();
-  painter.translate(msg.bb.center.position.x, msg.bb.center.position.y);
-  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
   // Annotate Confidence if known
-  painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
   if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
+    painter.save();
+    painter.translate(
+      msg.bb.center.position.x - msg.bb.size_x / 2,
+      msg.bb.center.position.y - msg.bb.size_y / 2);
     confidence::overlay(painter, msg.confidence);
+    painter.restore();
   }
-  painter.restore();
 
   // Draw center
   painter.drawPoint(msg.center.x, msg.center.y);

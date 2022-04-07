@@ -3,3 +3,7 @@ repositories:
     type: git
     url: https://github.com/ros-sports/soccer_interfaces.git
     version: rolling
+  vision_msgs_layers:
+    type: git
+    url: https://github.com/ros-sports/vision_msgs_layers.git
+    version: rolling
