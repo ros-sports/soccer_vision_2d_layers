@@ -29,7 +29,7 @@ void Ball::overlay(
   if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
     painter.save();
     painter.translate(
-      msg.bb.center.position.x - msg.bb.size_y / 2,
+      msg.bb.center.position.x - msg.bb.size_x / 2,
       msg.bb.center.position.y - msg.bb.size_y / 2);
     confidence::overlay(painter, msg.confidence);
     painter.restore();
