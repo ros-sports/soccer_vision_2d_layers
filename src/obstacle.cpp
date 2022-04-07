@@ -23,20 +23,24 @@ void Obstacle::overlay(
   QPainter & painter,
   const soccer_vision_msgs::msg::Obstacle & msg)
 {
-  QPen pen = painter.pen();
-  pen.setWidth(2);
-  painter.setPen(pen);
+  boundingBox2DLayer.overlay(painter, msg.bb);
 
+<<<<<<< HEAD
   // Draw Bounding Box and Confidence
   painter.save();
   painter.translate(msg.bb.center.x, msg.bb.center.y);
   painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
+=======
+>>>>>>> 80d7906 (use bounding box 2d layer for goalpost, marking ellipse, obstacle and robot layers)
   // Annotate Confidence if known
-  painter.translate(-msg.bb.size_x / 2, -msg.bb.size_y / 2);
   if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
+    painter.save();
+    painter.translate(
+      msg.bb.center.position.x - msg.bb.size_x / 2,
+      msg.bb.center.position.y - msg.bb.size_y / 2);
     confidence::overlay(painter, msg.confidence);
+    painter.restore();
   }
-  painter.restore();
 }
 
 }  // namespace soccer_vision_msgs_layers
