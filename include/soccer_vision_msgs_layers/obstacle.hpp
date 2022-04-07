@@ -18,6 +18,7 @@
 #include "soccer_vision_msgs_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
 #include "soccer_vision_msgs/msg/obstacle.hpp"
+#include "vision_msgs_layers/bounding_box_2d.hpp"
 
 namespace soccer_vision_msgs_layers
 {
@@ -28,6 +29,9 @@ public:
   void overlay(
     QPainter & painter,
     const soccer_vision_msgs::msg::Obstacle & msg) override;
+
+private:
+  vision_msgs_layers::BoundingBox2D boundingBox2DLayer;
 };
 
 }  // namespace soccer_vision_msgs_layers
