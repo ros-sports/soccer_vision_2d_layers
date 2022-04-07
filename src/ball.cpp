@@ -25,19 +25,12 @@ void Ball::overlay(
 {
   boundingBox2DLayer.overlay(painter, msg.bb);
 
-<<<<<<< HEAD
-  // Draw Bounding Box and Confidence
-  painter.save();
-  painter.translate(msg.bb.center.x, msg.bb.center.y);
-  painter.drawRect(-msg.bb.size_x / 2, -msg.bb.size_y / 2, msg.bb.size_x, msg.bb.size_y);
-=======
->>>>>>> 683e733 (use vision_msgs_layers for ball layer)
   // Annotate Confidence if known
   if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
     painter.save();
     painter.translate(
-      msg.bb.center.position.x - msg.bb.size_x / 2,
-      msg.bb.center.position.y - msg.bb.size_y / 2);
+      msg.bb.center.x - msg.bb.size_x / 2,
+      msg.bb.center.y - msg.bb.size_y / 2);
     confidence::overlay(painter, msg.confidence);
     painter.restore();
   }
