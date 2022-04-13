@@ -12,28 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef SOCCER_VISION_MSGS_LAYERS__OBSTACLE_HPP_
-#define SOCCER_VISION_MSGS_LAYERS__OBSTACLE_HPP_
+#ifndef SOCCER_VISION_2D_LAYERS__MARKING_SEGMENT_ARRAY_HPP_
+#define SOCCER_VISION_2D_LAYERS__MARKING_SEGMENT_ARRAY_HPP_
 
-#include "soccer_vision_msgs_layers/visibility_control.h"
+#include "soccer_vision_2d_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
-#include "soccer_vision_msgs/msg/obstacle.hpp"
-#include "vision_msgs_layers/bounding_box_2d.hpp"
+#include "soccer_vision_2d_msgs/msg/marking_array.hpp"
+#include "soccer_vision_2d_layers/marking_segment.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
-class Obstacle : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::Obstacle>
+class MarkingSegmentArray
+  : public rqt_image_overlay_layer::Plugin<soccer_vision_2d_msgs::msg::MarkingArray>
 {
-public:
+protected:
   void overlay(
     QPainter & painter,
-    const soccer_vision_msgs::msg::Obstacle & msg) override;
+    const soccer_vision_2d_msgs::msg::MarkingArray & msg) override;
 
 private:
-  vision_msgs_layers::BoundingBox2D boundingBox2DLayer;
+  MarkingSegment markingSegmentLayer;
 };
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
-#endif  // SOCCER_VISION_MSGS_LAYERS__OBSTACLE_HPP_
+#endif  // SOCCER_VISION_2D_LAYERS__MARKING_SEGMENT_ARRAY_HPP_

@@ -14,25 +14,25 @@
 
 #include <QPainter>
 #include <cmath>
-#include "soccer_vision_msgs_layers/marking_ellipse.hpp"
+#include "soccer_vision_2d_layers/marking_ellipse.hpp"
 #include "confidence.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
 void MarkingEllipse::overlay(
   QPainter & painter,
-  const soccer_vision_msgs::msg::MarkingEllipse & msg)
+  const soccer_vision_2d_msgs::msg::MarkingEllipse & msg)
 {
   boundingBox2DLayer.overlay(painter, msg.bb);
 
   // Annotate Confidence if known
-  if (msg.confidence != msg.CONFIDENCE_UNKNOWN) {
+  if (msg.confidence.confidence != msg.confidence.CONFIDENCE_UNKNOWN) {
     painter.save();
     painter.translate(
       msg.bb.center.x - msg.bb.size_x / 2,
       msg.bb.center.y - msg.bb.size_y / 2);
-    confidence::overlay(painter, msg.confidence);
+    confidence::overlay(painter, msg.confidence.confidence);
     painter.restore();
   }
 
@@ -40,10 +40,10 @@ void MarkingEllipse::overlay(
   painter.drawPoint(msg.center.x, msg.center.y);
 }
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::MarkingEllipse,
+  soccer_vision_2d_layers::MarkingEllipse,
   rqt_image_overlay_layer::PluginInterface)

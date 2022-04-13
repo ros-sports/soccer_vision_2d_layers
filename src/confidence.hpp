@@ -15,9 +15,9 @@
 #ifndef CONFIDENCE_HPP_
 #define CONFIDENCE_HPP_
 
-#include "soccer_vision_msgs_layers/visibility_control.h"
+#include "soccer_vision_2d_layers/visibility_control.h"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 namespace confidence
 {
@@ -27,6 +27,6 @@ void overlay(
   float confidence);
 
 }  // namespace confidence
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
 #endif  // CONFIDENCE_HPP_
