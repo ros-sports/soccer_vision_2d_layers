@@ -13,24 +13,24 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/marking_intersection_array.hpp"
+#include "soccer_vision_2d_layers/marking_intersection_array.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
 void MarkingIntersectionArray::overlay(
   QPainter & painter,
-  const soccer_vision_msgs::msg::MarkingArray & msg)
+  const soccer_vision_2d_msgs::msg::MarkingArray & msg)
 {
   for (auto & intersection : msg.intersections) {
     markingIntersectionLayer.overlay(painter, intersection);
   }
 }
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::MarkingIntersectionArray,
+  soccer_vision_2d_layers::MarkingIntersectionArray,
   rqt_image_overlay_layer::PluginInterface)

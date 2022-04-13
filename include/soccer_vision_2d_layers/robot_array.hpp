@@ -12,28 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_HPP_
-#define SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_HPP_
+#ifndef SOCCER_VISION_2D_LAYERS__ROBOT_ARRAY_HPP_
+#define SOCCER_VISION_2D_LAYERS__ROBOT_ARRAY_HPP_
 
-#include "soccer_vision_msgs_layers/visibility_control.h"
+#include "soccer_vision_2d_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
-#include "soccer_vision_msgs/msg/ball_array.hpp"
-#include "soccer_vision_msgs_layers/ball.hpp"
+#include "soccer_vision_2d_msgs/msg/robot_array.hpp"
+#include "soccer_vision_2d_layers/robot.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
-class BallArray : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::BallArray>
+class RobotArray : public rqt_image_overlay_layer::Plugin<soccer_vision_2d_msgs::msg::RobotArray>
 {
 protected:
   void overlay(
     QPainter & painter,
-    const soccer_vision_msgs::msg::BallArray & msg) override;
+    const soccer_vision_2d_msgs::msg::RobotArray & msg) override;
 
 private:
-  Ball ballLayer;
+  Robot robotLayer;
 };
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
-#endif  // SOCCER_VISION_MSGS_LAYERS__BALL_ARRAY_HPP_
+#endif  // SOCCER_VISION_2D_LAYERS__ROBOT_ARRAY_HPP_

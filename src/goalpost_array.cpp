@@ -13,24 +13,24 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/goalpost_array.hpp"
+#include "soccer_vision_2d_layers/goalpost_array.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
 void GoalpostArray::overlay(
   QPainter & painter,
-  const soccer_vision_msgs::msg::GoalpostArray & msg)
+  const soccer_vision_2d_msgs::msg::GoalpostArray & msg)
 {
   for (auto & goalpost : msg.posts) {
     goalpostLayer.overlay(painter, goalpost);
   }
 }
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::GoalpostArray,
+  soccer_vision_2d_layers::GoalpostArray,
   rqt_image_overlay_layer::PluginInterface)
