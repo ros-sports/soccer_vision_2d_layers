@@ -13,15 +13,15 @@
 // limitations under the License.
 
 #include <QPainter>
-#include "soccer_vision_msgs_layers/field_boundary.hpp"
+#include "soccer_vision_2d_layers/field_boundary.hpp"
 #include "confidence.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
 void FieldBoundary::overlay(
   QPainter & painter,
-  const soccer_vision_msgs::msg::FieldBoundary & msg)
+  const soccer_vision_2d_msgs::msg::FieldBoundary & msg)
 {
   QPen pen = painter.pen();
   pen.setWidth(2);
@@ -37,10 +37,10 @@ void FieldBoundary::overlay(
   }
 }
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::FieldBoundary,
+  soccer_vision_2d_layers::FieldBoundary,
   rqt_image_overlay_layer::PluginInterface)

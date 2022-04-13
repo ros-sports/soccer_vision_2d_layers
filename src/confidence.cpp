@@ -15,7 +15,7 @@
 #include <QPainter>
 #include "confidence.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 namespace confidence
 {
@@ -48,4 +48,4 @@ void overlay(
 }
 
 }  // namespace confidence
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers

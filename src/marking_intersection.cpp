@@ -14,17 +14,17 @@
 
 #include <QPainter>
 #include <cmath>
-#include "soccer_vision_msgs_layers/marking_intersection.hpp"
+#include "soccer_vision_2d_layers/marking_intersection.hpp"
 #include "confidence.hpp"
 
 #define RAY_LENGTH 20  // pixels
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
 void MarkingIntersection::overlay(
   QPainter & painter,
-  const soccer_vision_msgs::msg::MarkingIntersection & msg)
+  const soccer_vision_2d_msgs::msg::MarkingIntersection & msg)
 {
   QPen pen = painter.pen();
   pen.setWidth(8);
@@ -46,10 +46,10 @@ void MarkingIntersection::overlay(
   painter.drawPoint(0, 0);
 }
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
 #include "pluginlib/class_list_macros.hpp"
 
 PLUGINLIB_EXPORT_CLASS(
-  soccer_vision_msgs_layers::MarkingIntersection,
+  soccer_vision_2d_layers::MarkingIntersection,
   rqt_image_overlay_layer::PluginInterface)
