@@ -29,15 +29,9 @@ void Obstacle::overlay(
   if (msg.confidence.confidence != msg.confidence.CONFIDENCE_UNKNOWN) {
     painter.save();
     painter.translate(
-<<<<<<< HEAD
       msg.bb.center.x - msg.bb.size_x / 2,
       msg.bb.center.y - msg.bb.size_y / 2);
-    confidence::overlay(painter, msg.confidence);
-=======
-      msg.bb.center.position.x - msg.bb.size_x / 2,
-      msg.bb.center.position.y - msg.bb.size_y / 2);
     confidence::overlay(painter, msg.confidence.confidence);
->>>>>>> 223c0f0 (adapt to changes from https://github.com/ros-sports/soccer_interfaces/pull/22)
     painter.restore();
   }
 }
