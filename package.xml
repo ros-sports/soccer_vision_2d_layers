@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>soccer_vision_msgs_layers</name>
+  <name>soccer_vision_2d_layers</name>
   <version>0.0.0</version>
-  <description>Collection of RQt Image Overlay Plugins for Soccer Vision Msgs</description>
+  <description>Collection of RQt Image Overlay Plugins for Soccer Vision 2D Msgs</description>
   <maintainer email="kenjibrameld@gmail.com">ijnek</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake_ros</buildtool_depend>
 
   <depend>rqt_image_overlay_layer</depend>
-  <depend>soccer_vision_msgs</depend>
+  <depend>soccer_vision_2d_msgs</depend>
   <depend>vision_msgs_layers</depend>
 
   <test_depend>ament_lint_auto</test_depend>

@@ -1,47 +1,47 @@
-<library path="soccer_vision_msgs_layers">
-  <class type="soccer_vision_msgs_layers::Ball" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Ball</description>
+<library path="soccer_vision_2d_layers">
+  <class type="soccer_vision_2d_layers::Ball" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::Ball</description>
   </class>
-  <class type="soccer_vision_msgs_layers::BallArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::BallArray</description>
+  <class type="soccer_vision_2d_layers::BallArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::BallArray</description>
   </class>
-  <class type="soccer_vision_msgs_layers::FieldBoundary" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::FieldBoundary</description>
+  <class type="soccer_vision_2d_layers::FieldBoundary" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::FieldBoundary</description>
   </class>
-  <class type="soccer_vision_msgs_layers::Goalpost" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Goalpost</description>
+  <class type="soccer_vision_2d_layers::Goalpost" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::Goalpost</description>
   </class>
-  <class type="soccer_vision_msgs_layers::GoalpostArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::GoalpostArray</description>
+  <class type="soccer_vision_2d_layers::GoalpostArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::GoalpostArray</description>
   </class>
-  <class type="soccer_vision_msgs_layers::MarkingEllipse" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::MarkingEllipse</description>
+  <class type="soccer_vision_2d_layers::MarkingEllipse" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::MarkingEllipse</description>
   </class>
-  <class type="soccer_vision_msgs_layers::MarkingEllipseArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for ellipsis in soccer_vision_msgs::MarkingArray</description>
+  <class type="soccer_vision_2d_layers::MarkingEllipseArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for ellipsis in soccer_vision_2d_msgs::MarkingArray</description>
   </class>
-  <class type="soccer_vision_msgs_layers::MarkingIntersection" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::MarkingIntersection</description>
+  <class type="soccer_vision_2d_layers::MarkingIntersection" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::MarkingIntersection</description>
   </class>
-  <class type="soccer_vision_msgs_layers::MarkingIntersectionArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for intersections in soccer_vision_msgs::MarkingArray</description>
+  <class type="soccer_vision_2d_layers::MarkingIntersectionArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for intersections in soccer_vision_2d_msgs::MarkingArray</description>
   </class>
-  <class type="soccer_vision_msgs_layers::MarkingSegment" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::MarkingSegment</description>
+  <class type="soccer_vision_2d_layers::MarkingSegment" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::MarkingSegment</description>
   </class>
-  <class type="soccer_vision_msgs_layers::MarkingSegmentArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for segments in soccer_vision_msgs::MarkingArray</description>
+  <class type="soccer_vision_2d_layers::MarkingSegmentArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for segments in soccer_vision_2d_msgs::MarkingArray</description>
   </class>
-  <class type="soccer_vision_msgs_layers::Obstacle" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Obstacle</description>
+  <class type="soccer_vision_2d_layers::Obstacle" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::Obstacle</description>
   </class>
-  <class type="soccer_vision_msgs_layers::ObstacleArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::ObstacleArray</description>
+  <class type="soccer_vision_2d_layers::ObstacleArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::ObstacleArray</description>
   </class>
-  <class type="soccer_vision_msgs_layers::Robot" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::Robot</description>
+  <class type="soccer_vision_2d_layers::Robot" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::Robot</description>
   </class>
-  <class type="soccer_vision_msgs_layers::RobotArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
-    <description>This is an rqt_image_overlay layer for soccer_vision_msgs::RobotArray</description>
+  <class type="soccer_vision_2d_layers::RobotArray" base_class_type="rqt_image_overlay_layer::PluginInterface">
+    <description>This is an rqt_image_overlay layer for soccer_vision_2d_msgs::RobotArray</description>
   </class>
 </library>

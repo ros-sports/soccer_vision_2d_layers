@@ -12,29 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef SOCCER_VISION_MSGS_LAYERS__MARKING_ELLIPSE_HPP_
-#define SOCCER_VISION_MSGS_LAYERS__MARKING_ELLIPSE_HPP_
+#ifndef SOCCER_VISION_2D_LAYERS__OBSTACLE_ARRAY_HPP_
+#define SOCCER_VISION_2D_LAYERS__OBSTACLE_ARRAY_HPP_
 
-#include "soccer_vision_msgs_layers/visibility_control.h"
+#include "soccer_vision_2d_layers/visibility_control.h"
 #include "rqt_image_overlay_layer/plugin.hpp"
-#include "soccer_vision_msgs/msg/marking_ellipse.hpp"
-#include "vision_msgs_layers/bounding_box_2d.hpp"
+#include "soccer_vision_2d_msgs/msg/obstacle_array.hpp"
+#include "soccer_vision_2d_layers/obstacle.hpp"
 
-namespace soccer_vision_msgs_layers
+namespace soccer_vision_2d_layers
 {
 
-class MarkingEllipse
-  : public rqt_image_overlay_layer::Plugin<soccer_vision_msgs::msg::MarkingEllipse>
+class ObstacleArray
+  : public rqt_image_overlay_layer::Plugin<soccer_vision_2d_msgs::msg::ObstacleArray>
 {
-public:
+protected:
   void overlay(
     QPainter & painter,
-    const soccer_vision_msgs::msg::MarkingEllipse & msg) override;
+    const soccer_vision_2d_msgs::msg::ObstacleArray & msg) override;
 
 private:
-  vision_msgs_layers::BoundingBox2D boundingBox2DLayer;
+  Obstacle obstacleLayer;
 };
 
-}  // namespace soccer_vision_msgs_layers
+}  // namespace soccer_vision_2d_layers
 
-#endif  // SOCCER_VISION_MSGS_LAYERS__MARKING_ELLIPSE_HPP_
+#endif  // SOCCER_VISION_2D_LAYERS__OBSTACLE_ARRAY_HPP_
