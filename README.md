@@ -1,7 +1,7 @@
 # Soccer Vision 2D Layers for RQt Image Overlay
 
-[![Build and Test (galactic)](../../actions/workflows/build_and_test_galactic.yaml/badge.svg)](../../actions/workflows/build_and_test_galactic.yaml)
-[![Build and Test (rolling)](../../actions/workflows/build_and_test_rolling.yaml/badge.svg)](../../actions/workflows/build_and_test_rolling.yaml)
+[![Build and Test (galactic)](https://github.com/ros-sports/soccer_vision_2d_layers/actions/workflows/build_and_test_galactic.yaml/badge.svg?branch=galactic)](https://github.com/ros-sports/soccer_vision_2d_layers/actions/workflows/build_and_test_galactic.yaml?query=branch:galactic)
+[![Build and Test (rolling)](https://github.com/ros-sports/soccer_vision_2d_layers/actions/workflows/build_and_test_rolling.yaml/badge.svg?branch=rolling)](https://github.com/ros-sports/soccer_vision_2d_layers/actions/workflows/build_and_test_rolling.yaml?query=branch:rolling)
 
 A collection of [RQt Image Overlay](https://rqt-image-overlay.readthedocs.io/en/latest/index.html#) layers for drawing [Soccer Vision 2D Msgs](https://github.com/ros-sports/soccer_interfaces/tree/rolling/soccer_vision_2d_msgs) onto an image.
 
