@@ -8,10 +8,6 @@ A collection of [RQt Image Overlay](https://rqt-image-overlay.readthedocs.io/en/
 
 ![](images/screenshot.png)
 
-## ROS Distro
-
-This package works on ROS2 Galactic onwards.
-
 ## Installation
 
 [Install RQt Image Overlay](https://rqt-image-overlay.readthedocs.io/en/latest/installation.html#installation) if you haven't installed it yet.
